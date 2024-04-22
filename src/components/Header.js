@@ -1,15 +1,22 @@
+'use client'
+
 import Link from "next/link";
 import { AiFillHome } from "react-icons/ai";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import DarkModeSwitch from "./DarkModeSwitch";
+
+import { usePathname } from "next/navigation";
 const Header = () => {
+
+  const pathname = usePathname();
+
   return (
     <nav className="p-5 max-w-6xl mx-auto flex items-center justify-between">
       {/* left side */}
       <div className="">
         <ul className="flex items-center  gap-4">
           <li>
-            <Link className="hover:text-amber-500 " href="/">
+            <Link className={`hover:text-amber-500 ${pathname === '/' ?'text-amber-500' : ''} `} href="/">
               <p className="hidden sm:inline"> Home </p>
 
               <AiFillHome className="hover:text-amber-500 sm:hidden text-2xl" />
@@ -17,7 +24,7 @@ const Header = () => {
           </li>
 
           <li>
-            <Link className="hover:text-amber-500 " href="/about">
+            <Link className={`hover:text-amber-500 ${pathname === '/about' ?'text-amber-500' : ''} `} href="/about">
               <p className="hidden sm:inline"> About </p>
 
               <BsFillInfoCircleFill className="hover:text-amber-500 sm:hidden text-2xl" />
