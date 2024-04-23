@@ -23,7 +23,6 @@ async function HomePage({ searchParams }) {
    }
 
     const results = data.results;
-    console.log(results);
 
   return (
 
