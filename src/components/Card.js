@@ -10,7 +10,7 @@ const Card = ({ result }) => {
           src={`https://image.tmdb.org/t/p/original/${
             result.backdrop_path || result.poster_path
           }`}
-
+            alt ={result.title || result.name}
            width={500}
            height={300}
 
